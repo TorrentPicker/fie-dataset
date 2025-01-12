@@ -102,7 +102,7 @@ if __name__ == '__main__':
     extract_table_to(
         input_cursor, 'USERRSS_TASK_HISTORY',
         ['TITLE'],
-        output_cursor, 'NT_TRANSFER_HISTORY'
+        output_cursor, 'NT_USERRSS_TASK_HISTORY'
     )
     # 导出 movie-pilot-v2
     extract_table_to(
