@@ -90,12 +90,18 @@ if __name__ == '__main__':
     # 导出 nas-tools
     extract_table_to(
         input_cursor, 'DOWNLOAD_HISTORY',
-        ['ID', 'TITLE', 'YEAR', 'TYPE', 'TMDBID', 'TORRENT', 'SE', 'SAVE_PATH'],
+        ['TITLE', 'YEAR', 'TYPE', 'TMDBID', 'TORRENT', 'SE', 'SAVE_PATH'],
         output_cursor, 'NT_DOWNLOAD_HISTORY'
     )
     extract_table_to(
         input_cursor, 'TRANSFER_HISTORY',
-        ['ID', 'TYPE', 'TMDBID', 'TITLE', 'YEAR', 'SEASON_EPISODE', 'SOURCE_FILENAME', 'DEST_FILENAME'],
+        ['TYPE', 'TMDBID', 'TITLE', 'YEAR', 'SEASON_EPISODE', 'SOURCE_FILENAME', 'DEST_FILENAME'],
+        output_cursor, 'NT_TRANSFER_HISTORY'
+    )
+    # 导出 nas-tools 旧版
+    extract_table_to(
+        input_cursor, 'USERRSS_TASK_HISTORY',
+        ['TITLE'],
         output_cursor, 'NT_TRANSFER_HISTORY'
     )
     # 导出 movie-pilot-v2
